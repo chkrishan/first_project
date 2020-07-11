@@ -6,6 +6,7 @@ const Person = (props) => {
            <img src={require("./Images/man.jpg")} alt="imageErr" className="img"></img>
            <h2>{props.name}</h2>
            <p>{props.skill}</p> 
+           <input type="text" onChange={props.changed} />
         </div>
     
     )

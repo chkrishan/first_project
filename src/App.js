@@ -9,11 +9,7 @@ class App extends Component {
             {name:"krishan",skill:"FullStack Web Developer"},
             {name:"Pawan",skill:"FullStack Web Developer"},
             {name:"Ajay Kadoula",skill:"FullStack Web Developer"},
-            {name:"Rishu Gupta",skill:"FullStack Web Developer"},
-            {name:"Akash",skill:"UI/UX Designer"},
-            {name:"Pankaj",skill:"UI/UX Designer"},
-            {name:"vikas",skill:"React Developer"},
-            {name:"Pankaj",skill:"Andriod Developer"}
+            {name:"Rishu Gupta",skill:"FullStack Web Developer"}
         ],
 
         otherState:'some other state'
@@ -26,30 +22,45 @@ class App extends Component {
                 {name:"Rishu Gupta",skill:"FullStack/GITHUB"},
                 {name:"krishan",skill:"FullStack Web Developer"},
                 {name:"Pawan",skill:"FullStack Web Developer"},
-                {name:"Ajay Kadoula",skill:"FullStack Web Developer"},
-                {name:"Akash",skill:"UI/UX Designer"},
-                {name:"Pankaj",skill:"UI/UX Designer"},
-                {name:"vikas",skill:"React Developer"},
-                {name:"Pankaj",skill:"Andriod Developer"}
+                {name:"Ajay Kadoula",skill:"FullStack Web Developer"}
+               
                
              ]
          })
    
     }
 
+    nameChangedhandler=(event)=>{
+         this.setState({
+             persons:[
+                {name:event.target.value,skill:"FullStack/GITHUB"},
+                {name:"krishan",skill:"FullStack Web Developer"},
+                {name:"Pawan",skill:"FullStack Web Developer"},
+                {name:"Ajay Kadoula",skill:"FullStack Web Developer"}
+             ]
+         })
+    }
+
     render() {
+
+        const style={
+            font:'inherit',
+            border:'1px sloid blue',
+            padding:'5px',
+            cursor:'pointer',
+            margin:'4px'
+        }
         return ( 
         <div className = "App" >
+            <h2>Hii  i'm react app</h2>
              
-                <button onClick={this.switchStateHandler}>Switch Name</button><br/>
-            < Person name={this.state.persons[0].name} skill={this.state.persons[0].skill} />
+                <button onClick={this.switchStateHandler} style={style}>Switch Name</button><br/>
+                
+            < Person name={this.state.persons[0].name} skill={this.state.persons[0].skill} changed={this.nameChangedhandler} />
             < Person name={this.state.persons[1].name} skill={this.state.persons[1].skill} />
             < Person name={this.state.persons[2].name} skill={this.state.persons[2].skill} />
             < Person name={this.state.persons[3].name} skill={this.state.persons[3].skill} />
-            < Person name={this.state.persons[4].name} skill={this.state.persons[4].skill} />
-            < Person name={this.state.persons[5].name} skill={this.state.persons[5].skill} />
-            < Person name={this.state.persons[6].name} skill={this.state.persons[6].skill} />
-            < Person name={this.state.persons[7].name} skill={this.state.persons[7].skill} />
+           
             </div>
         );
     }
