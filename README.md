@@ -67,6 +67,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 
+<<<<<<< HEAD
 
 # after First commit
 ![]('src/Person/Images/first_commit_img.png')
@@ -75,3 +76,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 // learning about react props and state
 
 ![]('src/Person/Images/second_commit_img.png')
+=======
+
