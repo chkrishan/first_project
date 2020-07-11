@@ -70,11 +70,11 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 <<<<<<< HEAD
 
 # after First commit
-![]('src/Person/Images/first_commit_img.png')
+![](src/Person/Images/first_commit_img.png)
 
 #after second commit 
 // learning about react props and state
 
-![]('src/Person/Images/second_commit_img.png')
+![](src/Person/Images/second_commit_img.png)
 =======
 
