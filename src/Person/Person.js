@@ -4,9 +4,10 @@ const Person = (props) => {
     return ( 
         <div className="person">
            <img src={require("./Images/man.jpg")} alt="imageErr" className="img"></img>
-           <h2>{props.name}</h2>
+           <h2 >{props.name}</h2>
            <p>{props.skill}</p> 
-           <input type="text" onChange={props.changed} />
+           <input type="text" onChange={props.changed} value={props.name} />
+           <button onClick={props.click}>Delete</button>
         </div>
     
     )
