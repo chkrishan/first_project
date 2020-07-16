@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
-import Person from './Person/Person'
+import Person from './Person/Person';
+// import Radium ,{styleRoot} from 'radium';
 import './App.css';
+import styled from 'styled-components';
+
+const StyledButtton=styled.button`
+font:inherit;
+border:1px sloid blue;
+padding:5px;
+cursor:pointer;
+margin:4px;
+background-color:${props=>props.alt?"red":"green"};
+&:hover{
+    background-color:${props=>props.alt?"salmon":"lightgreen"};
+    color:black;
+}
+
+`;
 
 class App extends Component {
 
@@ -40,7 +56,7 @@ class App extends Component {
        this.setState({showPerson:!doesShow})
     }
 
-    deletePersonhnadler=(personIndex)=>{
+    deletePersonhandler=(personIndex)=>{
         //for best practice copy the original array and then do stuff with this new array and at the end upadte your currnt array
         // you can use 2 methods to copy 
         //first is 
@@ -54,14 +70,20 @@ class App extends Component {
     }
 
     render() {
-
-        const style={
-            font:'inherit',
-            border:'1px sloid blue',
-            padding:'5px',
-            cursor:'pointer',
-            margin:'4px'
-        }
+         // inline styling
+        // const style={
+        //     font:'inherit',
+        //     border:'1px sloid blue',
+        //     padding:'5px',
+        //     cursor:'pointer',
+        //     margin:'4px',
+        //     backgroundColor:'green',
+        //     ':hover':{
+        //         backgroundColor:'lightgreen',
+        //         color:'black'
+        //     }
+        // }
+        //we are not using inline style because here we are using style-component
 
         let persons=null;
         if(this.state.showPerson){
@@ -70,7 +92,7 @@ class App extends Component {
                 {
                     this.state.persons.map((person,index)=>{
                         return <Person
-                         click={()=>this.deletePersonhnadler(index)}
+                         click={()=>this.deletePersonhandler(index)}
                           name={person.name} 
                           skill={person.skill}
                           key={person.id}
@@ -78,14 +100,33 @@ class App extends Component {
                     })
                 }
                 </div>
-            )
+            );
+            // style.backgroundColor='grey';
+            // style[':hover']={
+            //     backgroundColor:'lightgreen',
+            //     color:'black'
+           // }
         }
+
+        //let classes=['red','bold'].join(' ');
+        //this will change this array of strings into a single string "bold red"
+        let classes =[];
+        if(this.state.persons.length<=2){
+            classes.push('red');
+        }
+        if(this.state.persons.length<=1){
+            classes.push('bold');
+        }
+
         return ( 
+            
         <div className = "App" >
             <h2>Hii  i'm react app</h2>
-            <button onClick={this.togglePersonHandler} style={style}>Show Persons</button><br/>
+            <p className={classes.join(' ')}>this is really working</p>
+            <StyledButtton  alt={this.state.showPerson} onClick={this.togglePersonHandler} >Show Persons</StyledButtton><br/>
             { persons }   
         </div>
+        
         );
     }
 
